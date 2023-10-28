@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Drag and Drop Number Swap</title>
+    <style>
+        #mytable {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            font-size: 20px;
+            transition: 1s;
+        }
+
+        th:hover {
+            background-color: #e600ff;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="mytable">
+        <thead>
+            <tr>
+                <th class="number" draggable="true" id="1">1</th>
+                <th class="number" draggable="true" id="2">2</th>
+                <th class="number" draggable="true" id="3">3</th>
+            </tr>
+            <tr>
+                <th class="number" draggable="true" id="4">4</th>
+                <th class="number" draggable="true" id="5">5</th>
+                <th class="number" draggable="true" id="6">6</th>
+            </tr>
+            <tr>
+                <th class="number" draggable="true" id="7">7</th>
+                <th class="number" draggable="true" id="8">8</th>
+                <th class="number" draggable="true" id="9">9</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+        var draggedCol = null;
+
+        function dragStart(event) {
+            draggedCol = this;
+            console.log(draggedCol)
+        }
+
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            if (draggedCol !== this) {
+                console.log(this)
+                var temp = this.innerHTML;
+                this.innerHTML = draggedCol.innerHTML;
+                draggedCol.innerHTML = temp;
+            }
+        }
+
+        var cols = document.querySelectorAll("th.number");
+        cols.forEach((col) => {
+            col.addEventListener('dragstart', dragStart);
+            col.addEventListener('dragover', handleDragOver);
+            col.addEventListener('drop', handleDrop);
+        });
+    </script>
+</body>
+
+</html>

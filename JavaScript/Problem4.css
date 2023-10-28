@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.session {
+  background-color: #000000;
+  color: #fff;
+  padding: 47px;
+}
+
+.session h1 {
+  font-size: 6rem;
+  margin: 10px;
+}
+
+.session_name {
+  font-weight: bold;
+  background-color: #272727;
+  color: #fff;
+  padding: 20px;
+  margin: 0px;
+}
+
+.items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.length_item,
+.break_item {
+  font-size: 3rem;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding: 15px;
+  border: 1px solid black;
+  background-color: rgb(52, 52, 52);
+}
+
+#length_item_dec,
+#break_item_dec,
+#length_item_inc,
+#break_item_inc {
+  font-size: 3rem;
+  border: 1px solid black;
+  width: 70%;
+  padding: 15px;
+  color: #fff;
+  height: 100%;
+  background-color: rgb(75, 162, 255);
+  cursor: pointer;
+}
+
+.button {
+  color: #fff;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button span {
+  cursor: pointer;
+  padding: 1.5%;
+  font-size: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.button span:last-child {
+  background-color: green;
+}
+.button span:first-child {
+  background-color: coral;
+}
+.button span:nth-child(2) {
+  background-color: rgb(192, 0, 0);
+}
